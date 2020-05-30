@@ -102,7 +102,11 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#CmdLineKind"
     title="CmdLineKind = enum
-  cmdEnd, cmdArgument, cmdLongOption, cmdShortOption, cmdError"><wbr />Cmd<wbr />Line<wbr />Kind<span class="attachedType"></span></a></li>
+  cmdEnd,                     ## end of command line reached
+  cmdArgument,                ## argument detected
+  cmdLongOption,              ## a long option ``--option`` detected
+  cmdShortOption,             ## a short option ``-c`` detected
+  cmdError                    ## error in primary option syntax usage"><wbr />Cmd<wbr />Line<wbr />Kind<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#OptParser"
     title="OptParser = object of RootObj
   cmd*: seq[string]            ## command line being parsed
@@ -184,7 +188,11 @@ function main() {
 <dl class="item">
 <a id="CmdLineKind"></a>
 <dt><pre><a href="parseopt3.html#CmdLineKind"><span class="Identifier">CmdLineKind</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">cmdEnd</span><span class="Other">,</span> <span class="Identifier">cmdArgument</span><span class="Other">,</span> <span class="Identifier">cmdLongOption</span><span class="Other">,</span> <span class="Identifier">cmdShortOption</span><span class="Other">,</span> <span class="Identifier">cmdError</span></pre></dt>
+  <span class="Identifier">cmdEnd</span><span class="Other">,</span>                     <span class="Comment">## end of command line reached</span>
+  <span class="Identifier">cmdArgument</span><span class="Other">,</span>                <span class="Comment">## argument detected</span>
+  <span class="Identifier">cmdLongOption</span><span class="Other">,</span>              <span class="Comment">## a long option ``--option`` detected</span>
+  <span class="Identifier">cmdShortOption</span><span class="Other">,</span>             <span class="Comment">## a short option ``-c`` detected</span>
+  <span class="Identifier">cmdError</span>                    <span class="Comment">## error in primary option syntax usage</span></pre></dt>
 <dd>
 
 the detected command line token
@@ -331,7 +339,7 @@ This is an convenience iterator for iterating over the command line. Parameters 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-11 12:31:24 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-30 17:00:40 UTC</small>
       </div>
     </div>
   </div>
